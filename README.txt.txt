@@ -1,0 +1,1 @@
+Just a bunch of js notes to keep yourself sharp.  I needit it , maybe you do too.  
