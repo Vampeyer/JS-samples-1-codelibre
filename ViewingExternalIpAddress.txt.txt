@@ -1,0 +1,17 @@
+To determine your local IP address on a Windows machine without using ipconfig:
+
+Windows Registry Editor Method a. Right-click on the Start button or press Win+X keyboard shortcut, then choose 'Regedit'.
+ b. Navigate through these keys: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\Interfaces. c.
+ Find an entry named 'Internet' and expand its properties to reveal its IPv4Address value. Copy this number to remember
+
+ it as your local IP address. d. Or,
+ look for another key representing your active connection adapter under Interfaces, e.g., 'Local Area Connection.' Note 
+=
+that different adapters might appear based on your network setup or configuration. Choose one appropriate for your 
+situation.
+PowerShell Local Computer Management Method a. Right-click inside File Explorer or Desktop, and choose 
+'Open PowerShell' (Administrator mode if necessary). Alternatively, press Win+X and choose
+ 'Windows PowerShell'. b. Execute the command
+: Get-NetAdapterBinding -ComponentID ms_tcpip6 -BindIpAddress true | Select-Object NetAdapterName, @{Label="IPv4 Address";Expression={(_.IpProperties[0].IPV4Address)} } This command retrieves the bindings related to TCP/IP version 6 (ms_tcpip6 component) and filters only those applicable to IPv4. It displays relevant adapter names and their corresponding IPv4 addresses. c. Look at the Output field when executing the query. Observe the NetAdapterName property and search for an Ethernet adapter or other suitable connector matching your network interface. Jot down the IPv4 Address value next to the selected adapter.
+
+These methods help you obtain your local IP address on a Windows machine without using the ipconfig utility. They require navigating various levels of the registry editor or PowerShell environment and interpreting results accordingly. Be cautious when modifying system files and folders. Consider seeking assistance before attempting unfamiliar tasks if needed.

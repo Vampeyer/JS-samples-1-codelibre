@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <h1  class="classDemo"   style="color: antiquewhite;"  >Header</h1>
+
+
+
+
+    <p class="big-green" style="color: antiquewhite;"  > Paragraph  </p>
+<p class="big-green" id="demo"style="color: antiquewhite;" 
+
+>  This will be the demo    </p>    
+
+<p class="classDemo" id="demo2" > .rrred</p>
+
+<!--Select n elememt by id    -->
+
+
+
+
+
+<script src="jsDOM.js" > </script>
+<script>
+
+ document.body.style.backgroundColor = "black"
+
+ document.querySelector("#demo").innerHTML = 2
+ 
+ document.querySelector("#demo").style.backgroundColor = "blue"
+ document.querySelector("#demo").style.maxWidth = "20px" 
+ 
+// big - green , 
+
+// jsDOM selectors are querySelector()  with a beginning dot (.-- ) for a class 
+//  or a (#  ) , for selecting an element by an id. 
+// you can also select an element by its name with a name tag. 
+
+////////////////////////////////////////////////////////////////
+/*
+------------ Demonstration of a for loop , =============
+ 
+to select multiple elements in a document and style them as such. 
+
+// first declare the document selection to a variable , like so , 
+*/
+//var selectedDomElement = document.getElementById("demo2")
+
+ var redDemo2 = document.getElementsByClassName("classDemo")  ///// SPECIAL NOTE , FOR LOOPS , ALWAYS USE THE PLURAL , ELEMENT'S BY CLASS NAME SELECTOR!
+ //redDemo2.style.backgroundColor = "red"
+//redDemo2[0].style.backgroundColor = "red"
+ 
+           // -------- WARNING - ALWAYS USA DOTNOTATION [0] AT THE END , FOR LOOPS RETURN AN ARRAY
+for ( let i = 0 ; i < redDemo2.length ; i++  ) {
+ 
+    redDemo2[i].style.backgroundColor = "red" 
+    redDemo2[i].style.fontSize = "20px";                        //  [0]  HAS TO BE PRESENT! 
+    document.querySelectorAll("h1")[0].innerHTML = " yellow"   ///  [0]  HAS TO BE PRESENT! 
+ 
+    //redDemo2[i].innerHTML = " Hello "
+
+     
+ }
+     document.getElementsByTagName("h1").innerHTML = "hi"
+
+  let tags = "Hello "
+    
+
+//}
+
+
+
+</script>
+
+
+<script>
+    document.getElementsByClassName(".classDemo").innerHTML = " Hello "
+</script>
+
+
+</body>
+</html> 

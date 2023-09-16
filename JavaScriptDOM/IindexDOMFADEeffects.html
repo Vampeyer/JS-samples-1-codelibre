@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        p#demo{ 
+            width: 300px; 
+            height: 300px ; 
+            background : #173459 ; 
+            opacity: 1;
+            display: block;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    
+<p id="demo" ></p>
+
+<input onclick="faderOut()"  type="submit" value="Fading  Out "  > 
+
+<input onclick="faderIn()"  type="submit" value="Fading  Inwards  "  > 
+
+
+<input onclick="slideUp()"  type="submit" value="Slide Up Effect Function Call  "  > 
+
+
+<input onclick="slideDown()"  type="submit" value="Slide Down  Effect Function Call    "  > 
+
+
+<script>
+
+
+// Fade out  - away , fade off.  
+
+function faderOut() {
+var elem = document.getElementById("demo") 
+elem.style.opacity = 0; 
+setTimeout(function() {
+    elem.style.display = "none"; 
+    
+}, 1000 )} 
+
+
+
+// Fade inwards 
+
+function faderIn() {
+var elem = document.getElementById("demo") 
+
+elem.style.display = "block"; 
+setTimeout(function() {
+    elem.style.opacity = 1; 
+    
+    
+}, 1000 )} 
+
+
+
+
+function slideUp(){ 
+
+    var elem = document.getElementById("demo") 
+    elem.style.maxHeight = "0px"
+}
+
+function slideDown (){ 
+
+var elem = document.getElementById("demo") 
+elem.style.maxHeight = "200px"
+}
+
+
+
+
+
+
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <button onclick="sendPost();"> Make Post Request </button>
+ 
+
+<div id="demo" ></div>
+
+
+<script>
+
+
+var httpRequest = new XMLHttpRequest(); 
+
+function sendPost() { 
+document.getElementById("demo").innerHTML = "Call post "
+
+httpRequest.onreadystatechange = writeContent 
+
+httpRequest.open("POST" , "https://www.codeliber.com/test.php" )
+// set resquest header with post - mosre secure  
+httpRequest.setRequestHeader("Content-Type" , "application/x-www-form-urlencoded");
+
+httpRequest.send("firstNAme=billy&lastName=williams"); 
+} 
+
+  // response and error handleing
+
+function  writeContent(){ 
+    if ( httpRequest.readyState == 4 ) { 
+        if ( httpRequest.status == 200 ) { 
+            document.getElementById("demo").innerHTML = httpRequest.responseText;
+        } else  { 
+            alert("Server issue or something ")
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>

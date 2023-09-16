@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <button onclick="makeRequests();" >make request</button>   
+<div id="demo" ></div>
+
+
+<script>
+
+
+var httpRequest = new XMLHttpRequest(); 
+
+function makeRequests() { 
+
+
+httpRequest.onreadystatechange = writeContent 
+
+httpRequest.open("GET" , "https://www.codeliber.com/test.php" )
+httpRequest.send(); 
+} 
+
+
+function  writeContent(){ 
+    if ( httpRequest.readyState == 4 ) { 
+        if ( httpRequest.status == 200 ) { 
+            document.getElementById("demo").innerHTML = httpRequest.responseText;
+        } else  { 
+            alert("Server issue or something ")
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
